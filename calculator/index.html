@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .key{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            /* background-color: red; */
+            /* width: 30vw; */
+            padding: 30px;
+            border: 2px solid black;
+        }
+        .disp{
+            padding: 20px;
+            width: 250px;
+            border: 2px solid black;
+            margin-bottom: 10px;
+        }
+        .last{
+            display: grid;
+            grid-template-columns: 140px 73px 70px;
+            justify-content: center;
+
+        }.clear{
+            display: grid;
+            grid-template-columns: 283px;
+            justify-content: center;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+<!--    
+    <div class="disp">
+            2
+    </div> -->
+    <center>
+        <div class="disp">
+        
+        <p id="par"></p>
+            
+        </div>
+
+    </center>
+   
+    
+    <div class="key">
+        
+
+        <button  onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button onclick="append('+')">+</button>
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button onclick="append('-')">-</button>
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button onclick="append('*')">*</button>
+        
+        
+
+        
+
+
+    </div>
+    <div class="last">
+        <button onclick="append('0')">0</button>
+        <button onclick="append('=')">=</button>
+        <button onclick="append('/')">/</button>
+    </div>
+    <div class="clear">
+        <button onclick="append('clear')">clear</button>
+    </div>
+
+    <script>
+       
+        const append=(a)=>{
+            if(a=="="){
+                let ans=eval(document.getElementById('par').innerHTML.toString());
+                console.log(ans);
+                document.getElementById('par').innerHTML=`${ans}`;
+                
+            }else if(a=='clear'){
+                document.getElementById('par').innerHTML="";
+
+            }
+            else{
+                document.getElementById('par').innerHTML=`${document.getElementById('par').innerHTML} ${a}`;
+
+            }
+
+        }
+        
+        
+    </script>
+    
+</body>
+</html>
